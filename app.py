@@ -11,6 +11,7 @@ import numpy as np
 
 
 app = Flask(__name__)
+application = app
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 model = load_model(os.path.join(BASE_DIR , 'finnalproject_Apps.h5'))
 #model = load_model(r'C:\Users\user\Downloads\Dataset\Python-Flask-Authentication-Tutorial-main\finnalproject_Apps.h5')
