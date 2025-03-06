@@ -1,0 +1,22 @@
+app = "radiog1-summer-dust-9036"
+primary_region = "cdg"
+
+[build]
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ['app']
+
+[[http_service.checks]]
+  interval = "10s"
+  timeout = "2s"
+  path = "/health"  # Health check endpoint
+
+[[vm]]
+  memory = "2gb"
+  cpu_kind = "shared"
+  cpus = 4
